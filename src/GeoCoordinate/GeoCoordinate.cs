@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Globalization;
 
-namespace GeoCoordinatePortable
+namespace Carable.GeoCoordinates
 {
     /// <summary>
     /// Represents a geographical location that is determined by latitude and longitude

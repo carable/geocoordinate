@@ -1,0 +1,10 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard1.4</TargetFramework>
+    <Version>0.2.0</Version>
+    <PackageId>Carable.GeoCoordinate</PackageId>
+  </PropertyGroup>
+
+
+</Project>
