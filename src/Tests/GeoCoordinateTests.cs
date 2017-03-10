@@ -268,5 +268,11 @@ namespace GeoCoordinatePortableTests
             _UnitUnderTest.Longitude = 1;
             Assert.Equal("NaN, 1", _UnitUnderTest.ToString());
         }
+
+        [Fact]
+        public void GeoCoordinate_some_coordinates()
+        {
+            var coord= new GeoCoordinate(longitude: -96.796987899999991, latitude: 32.7766642);
+        }
     }
 }
