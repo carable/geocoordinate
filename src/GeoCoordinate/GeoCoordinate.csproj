@@ -2,8 +2,13 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard1.4</TargetFramework>
-    <Version>0.2.0</Version>
+    <Version>0.3.0</Version>
     <PackageId>Carable.GeoCoordinate</PackageId>
+    <RootNamespace>Carable.GeoCoordinates</RootNamespace>
+    <AssemblyName>Carable.GeoCoordinates</AssemblyName>
+    <Authors>GeoCoordinate</Authors>
+    <AssemblyVersion>0.2.0.0</AssemblyVersion>
+    <FileVersion>0.2.0.0</FileVersion>
   </PropertyGroup>
 
 
