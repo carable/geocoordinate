@@ -4,7 +4,7 @@
     /// ISO-3166-Countries
     /// Three letter country codes
     /// </summary>
-    public enum ThreeLetterISOCountryNames : int
+    public enum ThreeLetterISOCountryCode : int
     {
         /// <summary>
         /// None or unknown 
