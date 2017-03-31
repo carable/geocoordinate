@@ -1,4 +1,4 @@
-﻿namespace Carable.GeoCoordinates.References
+﻿namespace Carable.GeoCoordinates
 {
     /// <summary>
     /// ISO-3166-Countries
