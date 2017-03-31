@@ -4,7 +4,7 @@
     /// ISO-3166-Countries
     /// Two letter codes
     /// </summary>
-    public enum Country2:int
+    public enum TwoLetterISOCountryNames:int
     {
         /// <summary>
         /// None or unknown 

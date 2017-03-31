@@ -2,8 +2,9 @@
 {
     /// <summary>
     /// ISO-3166-Countries
+    /// Three letter country codes
     /// </summary>
-    public enum Country : int
+    public enum ThreeLetterISOCountryNames : int
     {
         /// <summary>
         /// None or unknown 
