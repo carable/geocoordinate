@@ -14,6 +14,15 @@ namespace Carable.GeoCoordinates
             return new Distance(UnitOfLength.Millimeter, valueInMillimeters);
         }
         /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="valueInMeters"></param>
+        /// <returns></returns>
+        public static Distance Meters(this int valueInMeters)
+        {
+            return new Distance(UnitOfLength.Meter, valueInMeters);
+        }
+        /// <summary>
         /// Return a <see cref="Distance"/> in with the unit set to kilometers
         /// </summary>
         public static Distance Kilometers(this int valueInKilometers)
@@ -36,6 +45,15 @@ namespace Carable.GeoCoordinates
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="valueInMeters"></param>
+        /// <returns></returns>
+        public static Distance Meters(this long valueInMeters)
+        {
+            return new Distance(UnitOfLength.Meter, valueInMeters);
+        }
+        /// <summary>
         /// Return a <see cref="Distance"/> in with the unit set to kilometers
         /// </summary>
         public static Distance Kilometers(this long valueInKilometers)
@@ -55,6 +73,16 @@ namespace Carable.GeoCoordinates
         public static Distance InternationalMiles(this long valueInInternationalMiles)
         {
             return new Distance(UnitOfLength.InternationalMile, valueInInternationalMiles);
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="valueInMeters"></param>
+        /// <returns></returns>
+        public static Distance Meters(this double valueInMeters)
+        {
+            return new Distance(UnitOfLength.Meter, valueInMeters);
         }
 
         /// <summary>
@@ -101,25 +129,29 @@ namespace Carable.GeoCoordinates
                     return meter / Math.Pow(10, 4);
                 case UnitOfLength.InternationalMile:
                     return meter / 1609.344;
+                case UnitOfLength.Meter:
+                    return meter;
                 default:
                     throw new Exception(toUnit.ToString());
             }
         }
 
-        private static double ToMeters(double value, UnitOfLength unit)
+        private static double ToMeters(double fromValue, UnitOfLength fromUnit)
         {
-            switch (unit)
+            switch (fromUnit)
             {
                 case UnitOfLength.Millimeter:
-                    return value * Math.Pow(10, -3);
+                    return fromValue * Math.Pow(10, -3);
                 case UnitOfLength.Kilometer:
-                    return value * Math.Pow(10, 3);
+                    return fromValue * Math.Pow(10, 3);
                 case UnitOfLength.ScandinavianMile:
-                    return value * Math.Pow(10, 4);
+                    return fromValue * Math.Pow(10, 4);
                 case UnitOfLength.InternationalMile:
-                    return value * 1609.344;
+                    return fromValue * 1609.344;
+                case UnitOfLength.Meter:
+                    return fromValue;
                 default:
-                    throw new Exception(unit.ToString());
+                    throw new Exception(fromUnit.ToString());
             }
         }
 

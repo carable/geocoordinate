@@ -15,6 +15,10 @@ namespace Carable.GeoCoordinates
         /// </summary>
         Millimeter,
         /// <summary>
+        /// Meters
+        /// </summary>
+        Meter,
+        /// <summary>
         /// Kilometers. Default unit for most countries.
         /// </summary>
         Kilometer,
