@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <TargetFrameworks>netstandard1.4;net45</TargetFrameworks>
-    <Version>1.1.1</Version>
+    <Version>1.2.1</Version>
     <PackageId>Carable.GeoCoordinate</PackageId>
     <RootNamespace>Carable.GeoCoordinates</RootNamespace>
     <AssemblyName>Carable.GeoCoordinates</AssemblyName>
