@@ -14,6 +14,24 @@ namespace GeoCoordinatePortableTests
         }
 
         [Fact]
+        public void OneKmIsLessThanTwo()
+        {
+            Assert.Equal(1.0.Kilometers().CompareTo( 2.0.Kilometers()), -1);
+            Assert.Equal(2.0.Kilometers().CompareTo( 1.0.Kilometers()), 1);
+            Assert.Equal(1.0.Kilometers() < 2.0.Kilometers(), true);
+            Assert.Equal(2.0.Kilometers() < 1.0.Kilometers(), false);
+        }
+
+        [Fact]
+        public void ThreeKmIsGreaterThanTwo()
+        {
+            Assert.Equal(3.0.Kilometers().CompareTo( 2.0.Kilometers()), 1);
+            Assert.Equal(2.0.Kilometers().CompareTo( 3.0.Kilometers()), -1);
+            Assert.Equal(3.0.Kilometers() > 2.0.Kilometers(), true);
+            Assert.Equal(2.0.Kilometers() > 3.0.Kilometers(), false);
+        }
+
+        [Fact]
         public void KmAndInternationalMiles()
         {
             Assert.Equal(1.609344.Kilometers(), 1.InternationalMiles().ConvertTo(UnitOfLength.Kilometer));

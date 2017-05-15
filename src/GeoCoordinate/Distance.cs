@@ -5,7 +5,7 @@ namespace Carable.GeoCoordinates
     /// <summary>
     /// Represents a distance in a unit
     /// </summary>
-    public struct Distance : IEquatable<Distance>
+    public struct Distance : IEquatable<Distance>, IComparable<Distance>
     {
         public double Value { get; }
         public UnitOfLength Unit { get; }
@@ -40,6 +40,14 @@ namespace Carable.GeoCoordinates
         {
             return $"{Value} {Unit}";
         }
+
+        public int CompareTo(Distance other)
+        {
+            return (this.Unit!=other.Unit)
+                ? this.CompareTo(other.ConvertTo(this.Unit))
+                : this.Value.CompareTo(other.Value);
+        }
+
         public static bool operator ==(Distance a, Distance b)
         {
             // If both are null, or both are same instance, return true.
@@ -61,6 +69,23 @@ namespace Carable.GeoCoordinates
         public static bool operator !=(Distance a, Distance b)
         {
             return !(a == b);
+        }
+
+        public static bool operator <=(Distance a, Distance b)
+        {
+            return a.CompareTo(b) <=0;
+        }
+        public static bool operator >=(Distance a, Distance b)
+        {
+            return a.CompareTo(b) >=0;
+        }
+        public static bool operator >(Distance a, Distance b)
+        {
+            return a.CompareTo(b) >0;
+        }
+        public static bool operator <(Distance a, Distance b)
+        {
+            return a.CompareTo(b) <0;
         }
     }
 }
