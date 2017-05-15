@@ -1,7 +1,10 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
-
   <PropertyGroup>
-    <TargetFrameworks>netstandard1.4;net45</TargetFrameworks>
+    <IsWindows Condition="'$(OS)' == 'Windows_NT'">true</IsWindows>
+  </PropertyGroup>
+  <PropertyGroup>
+    <TargetFramework Condition=" '$(IsWindows)' == ''">netstandard1.4</TargetFramework>
+    <TargetFrameworks Condition=" '$(IsWindows)' == 'true'">netstandard1.4;net45</TargetFrameworks>
     <Version>2.0.0</Version>
     <PackageId>Carable.GeoCoordinate</PackageId>
     <RootNamespace>Carable.GeoCoordinates</RootNamespace>
