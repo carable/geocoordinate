@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <TargetFrameworks>netstandard1.4;net45</TargetFrameworks>
-    <Version>2.0.1</Version>
+    <Version>2.1.0</Version>
     <PackageId>Carable.GeoCoordinate</PackageId>
     <RootNamespace>Carable.GeoCoordinates</RootNamespace>
     <AssemblyName>Carable.GeoCoordinate</AssemblyName>
