@@ -8,7 +8,6 @@
   environment:
     NUGET_SOURCE: https://www.nuget.org/api/v2/package
   build_script:
-  - ps: 
     - cd src/
     - dotnet restore
     - dotnet build GeoCoordinate
@@ -31,7 +30,6 @@
   environment:
     NUGET_SOURCE: https://www.myget.org/F/akavache/api/v2/package
   build_script:
-  - ps: 
     - cd src/
     - dotnet restore
     - dotnet build GeoCoordinate
