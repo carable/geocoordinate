@@ -8,13 +8,13 @@
   environment:
     NUGET_SOURCE: https://www.nuget.org/api/v2/package
   build_script:
-  - ps: >-
-      cd src/
-      dotnet restore
-      dotnet build GeoCoordinate
-      dotnet build Tests
-      cd Tests
-      dotnet test
+  - ps: 
+    - cd src/
+    - dotnet restore
+    - dotnet build GeoCoordinate
+    - dotnet build Tests
+    - cd Tests
+    - dotnet test
   artifacts:
   - path: artifacts/*
     #- path: '**/bin/*'
@@ -31,13 +31,13 @@
   environment:
     NUGET_SOURCE: https://www.myget.org/F/akavache/api/v2/package
   build_script:
-  - ps: >-
-      cd src/
-      dotnet restore
-      dotnet build GeoCoordinate
-      dotnet build Tests
-      cd Tests
-      dotnet test
+  - ps: 
+    - cd src/
+    - dotnet restore
+    - dotnet build GeoCoordinate
+    - dotnet build Tests
+    - cd Tests
+    - dotnet test
   artifacts:
   - path: artifacts/*
     #- path: '**/bin/*'
