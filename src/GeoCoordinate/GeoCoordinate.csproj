@@ -1,13 +1,17 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <TargetFramework>netstandard1.1</TargetFramework>
-    <Version>2.1.0</Version>
+    <VersionPrefix>2.1.1</VersionPrefix>
+    <VersionSuffix></VersionSuffix>
+    <Version Condition=" '$(VersionSuffix)' != '' ">$(VersionPrefix)-$(VersionSuffix)</Version>
+    <Version Condition=" '$(VersionSuffix)' == '' ">$(VersionPrefix)</Version>
+    <AssemblyVersion>$(VersionPrefix).0</AssemblyVersion>
+    <FileVersion>$(VersionPrefix).0</FileVersion>
+
     <PackageId>Carable.GeoCoordinate</PackageId>
     <RootNamespace>Carable.GeoCoordinates</RootNamespace>
     <AssemblyName>Carable.GeoCoordinate</AssemblyName>
     <Authors>GeoCoordinate</Authors>
-    <AssemblyVersion>2.0.0.0</AssemblyVersion>
-    <FileVersion>2.0.0.0</FileVersion>
     <Product>Carable.GeoCoordinate</Product>
     <Description>GeoCoordinate is a library to satisfy the geo location types shared in Carable code.</Description>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
