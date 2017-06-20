@@ -1,6 +1,6 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <TargetFrameworks>netstandard1.4;net45</TargetFrameworks>
+    <TargetFramework>netstandard1.1</TargetFramework>
     <Version>2.1.0</Version>
     <PackageId>Carable.GeoCoordinate</PackageId>
     <RootNamespace>Carable.GeoCoordinates</RootNamespace>
@@ -10,10 +10,7 @@
     <FileVersion>2.0.0.0</FileVersion>
     <Product>Carable.GeoCoordinate</Product>
     <Description>GeoCoordinate is a library to satisfy the geo location types shared in Carable code.</Description>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
   </PropertyGroup>
-  <PropertyGroup>
-    <DocumentationFile>bin\$(Configuration)\$(TargetFramework)\.xml</DocumentationFile>
-  </PropertyGroup>
-
 
 </Project>
