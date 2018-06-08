@@ -107,6 +107,53 @@ namespace Carable.GeoCoordinates
             return new Distance(UnitOfLength.InternationalMile, valueInInternationalMiles);
         }
 
+        public static string GetUSEnglishName(this UnitOfLength unit)
+        {
+            switch (unit)
+            {
+                case UnitOfLength.Millimeter:
+                    return "millimeter";
+                case UnitOfLength.Kilometer:
+                    return "kilometer";
+                case UnitOfLength.ScandinavianMile:
+                    return "scandinavian mile";
+                case UnitOfLength.InternationalMile:
+                    return "mile";
+                case UnitOfLength.Meter:
+                    return "meter";
+                case UnitOfLength.Inch:
+                    return "inch";
+                default:
+                    throw new Exception(unit.ToString());
+            }
+        }
+
+        public static string GetUSEnglishNamePluralized(this UnitOfLength unit)
+        {
+            if (unit == UnitOfLength.Inch) return "inches";
+            return GetUSEnglishName(unit) + "s";
+        }
+
+
+        public static string GetEnglishAbbreviation(this UnitOfLength unit)
+        {
+            switch (unit)
+            {
+                case UnitOfLength.Inch:
+                    return "in";
+                case UnitOfLength.Millimeter:
+                    return "mm";
+                case UnitOfLength.Kilometer:
+                    return "km";
+                case UnitOfLength.InternationalMile:
+                    return "mi";
+                case UnitOfLength.Meter:
+                    return "m";
+                default:
+                    throw new Exception(unit.ToString());
+            }
+        }
+        
         /// <summary>
         /// Convert value to requested unit of length
         /// </summary>
