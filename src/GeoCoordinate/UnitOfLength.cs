@@ -32,13 +32,14 @@ namespace Carable.GeoCoordinates
         /// </summary>
         Inch,
         /// <summary>
-        /// The tire industry standard used for measuring tire tread depths in the United States is in 1/32nd-inch increments (millimeters are used in countries observing metric standards).
-        /// </summary>
-        Inch32Fraction,
-        /// <summary>
         /// The international mile is precisely equal to 1.609344 km.
         /// <a href="https://en.wikipedia.org/wiki/Mile#International_mile">wikipedia</a> 
         /// </summary>
-        InternationalMile
+        InternationalMile,
+        /// <summary>
+        /// The tire industry standard used for measuring tire tread depths in the United States is in 1/32nd-inch increments (millimeters are used in countries observing metric standards).
+        /// </summary>
+        Inch32Fraction,
+
     }
 }
