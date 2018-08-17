@@ -1,4 +1,5 @@
 ﻿using System;
+
 namespace Carable.GeoCoordinates
 {
     /// <summary>
@@ -13,6 +14,23 @@ namespace Carable.GeoCoordinates
         {
             return new Distance(UnitOfLength.Millimeter, valueInMillimeters);
         }
+
+        /// <summary>
+        /// Return a <see cref="Distance"/> in with the unit set to inches
+        /// </summary>
+        public static Distance Inches(this int valueInInches)
+        {
+            return new Distance(UnitOfLength.Inch, valueInInches);
+        }
+
+        /// <summary>
+        /// Return a <see cref="Distance"/> in with the unit set to 32 fraction of inch
+        /// </summary>
+        public static Distance Inch32Fractions(this int valueInInches)
+        {
+            return new Distance(UnitOfLength.Inch32Fraction, valueInInches);
+        }
+
         /// <summary>
         /// 
         /// </summary>
@@ -22,6 +40,7 @@ namespace Carable.GeoCoordinates
         {
             return new Distance(UnitOfLength.Meter, valueInMeters);
         }
+
         /// <summary>
         /// Return a <see cref="Distance"/> in with the unit set to kilometers
         /// </summary>
@@ -29,6 +48,7 @@ namespace Carable.GeoCoordinates
         {
             return new Distance(UnitOfLength.Kilometer, valueInKilometers);
         }
+
         /// <summary>
         /// Return a <see cref="Distance"/> in with the unit set to scandinavian mile
         /// </summary>
@@ -36,6 +56,7 @@ namespace Carable.GeoCoordinates
         {
             return new Distance(UnitOfLength.ScandinavianMile, valueInScandinavianMiles);
         }
+
         /// <summary>
         /// Return a <see cref="Distance"/> in with the unit set to international mile
         /// </summary>
@@ -53,6 +74,7 @@ namespace Carable.GeoCoordinates
         {
             return new Distance(UnitOfLength.Meter, valueInMeters);
         }
+
         /// <summary>
         /// Return a <see cref="Distance"/> in with the unit set to kilometers
         /// </summary>
@@ -60,6 +82,7 @@ namespace Carable.GeoCoordinates
         {
             return new Distance(UnitOfLength.Kilometer, valueInKilometers);
         }
+
         /// <summary>
         /// Return a <see cref="Distance"/> in with the unit set to scandinavian mile
         /// </summary>
@@ -67,6 +90,7 @@ namespace Carable.GeoCoordinates
         {
             return new Distance(UnitOfLength.ScandinavianMile, valueInScandinavianMiles);
         }
+
         /// <summary>
         /// Return a <see cref="Distance"/> in with the unit set to international mile
         /// </summary>
@@ -92,6 +116,7 @@ namespace Carable.GeoCoordinates
         {
             return new Distance(UnitOfLength.Kilometer, valueInKilometers);
         }
+
         /// <summary>
         /// Return a <see cref="Distance"/> in with the unit set to scandinavian mile
         /// </summary>
@@ -99,12 +124,37 @@ namespace Carable.GeoCoordinates
         {
             return new Distance(UnitOfLength.ScandinavianMile, valueInScandinavianMiles);
         }
+
         /// <summary>
         /// Return a <see cref="Distance"/> in with the unit set to international mile
         /// </summary>
         public static Distance InternationalMiles(this double valueInInternationalMiles)
         {
             return new Distance(UnitOfLength.InternationalMile, valueInInternationalMiles);
+        }
+
+        /// <summary>
+        /// Return a <see cref="Distance"/> in with the unit set to kilometers
+        /// </summary>
+        public static Distance Millimeters(this double valueInMillimeters)
+        {
+            return new Distance(UnitOfLength.Millimeter, valueInMillimeters);
+        }
+
+        /// <summary>
+        /// Return a <see cref="Distance"/> in with the unit set to inches
+        /// </summary>
+        public static Distance Inches(this double valueInInches)
+        {
+            return new Distance(UnitOfLength.Inch, valueInInches);
+        }
+
+        /// <summary>
+        /// Return a <see cref="Distance"/> in with the unit set to 32 fraction of inch
+        /// </summary>
+        public static Distance Inch32Fractions(this double valueInInches)
+        {
+            return new Distance(UnitOfLength.Inch32Fraction, valueInInches);
         }
 
         public static string GetUSEnglishName(this UnitOfLength unit)
@@ -123,6 +173,8 @@ namespace Carable.GeoCoordinates
                     return "meter";
                 case UnitOfLength.Inch:
                     return "inch";
+                case UnitOfLength.Inch32Fraction:
+                    return "32nd of inch";
                 default:
                     throw new Exception(unit.ToString());
             }
@@ -141,6 +193,8 @@ namespace Carable.GeoCoordinates
             {
                 case UnitOfLength.Inch:
                     return "in";
+                case UnitOfLength.Inch32Fraction:
+                    return "32nd";
                 case UnitOfLength.Millimeter:
                     return "mm";
                 case UnitOfLength.Kilometer:
@@ -153,7 +207,7 @@ namespace Carable.GeoCoordinates
                     throw new Exception(unit.ToString());
             }
         }
-        
+
         /// <summary>
         /// Convert value to requested unit of length
         /// </summary>
@@ -176,6 +230,10 @@ namespace Carable.GeoCoordinates
                     return meter / Math.Pow(10, 4);
                 case UnitOfLength.InternationalMile:
                     return meter / 1609.344;
+                case UnitOfLength.Inch:
+                    return meter / 0.0254; //inch == 2.54 cm
+                case UnitOfLength.Inch32Fraction:
+                    return meter / (0.0254 / 32.0);
                 case UnitOfLength.Meter:
                     return meter;
                 default:
@@ -195,12 +253,15 @@ namespace Carable.GeoCoordinates
                     return fromValue * Math.Pow(10, 4);
                 case UnitOfLength.InternationalMile:
                     return fromValue * 1609.344;
+                case UnitOfLength.Inch:
+                    return fromValue * 0.0254; //inch == 2.54 cm
+                case UnitOfLength.Inch32Fraction:
+                    return fromValue * (0.0254 / 32.0);
                 case UnitOfLength.Meter:
                     return fromValue;
                 default:
                     throw new Exception(fromUnit.ToString());
             }
         }
-
     }
 }

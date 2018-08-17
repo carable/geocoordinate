@@ -16,6 +16,7 @@ namespace GeoCoordinatePortableTests
         {
             Assert.NotEmpty(unitOfLength.GetUSEnglishNamePluralized());
         }
+
         [Theory,
          InlineData(UnitOfLength.Inch),
          InlineData(UnitOfLength.InternationalMile),
@@ -27,6 +28,7 @@ namespace GeoCoordinatePortableTests
         {
             Assert.NotEmpty(unitOfLength.GetUSEnglishName());
         }
+
         [Theory,
          InlineData(UnitOfLength.Inch),
          InlineData(UnitOfLength.InternationalMile),
